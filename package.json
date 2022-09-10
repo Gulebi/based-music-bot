@@ -1,0 +1,20 @@
+{
+    "name": "bot",
+    "version": "0.0.1",
+    "description": "the best music bot",
+    "main": "./src/index.js",
+    "scripts": {
+        "start": "node ./src/index.js",
+        "dev": "nodemon ./src/index.js"
+    },
+    "keywords": [],
+    "author": "Gulebi",
+    "license": "MIT",
+    "dependencies": {
+        "@discordjs/opus": "^0.8.0",
+        "@sapphire/framework": "^3.1.1",
+        "discord-player": "^5.3.1",
+        "discord.js": "^14.3.0",
+        "dotenv": "^16.0.2"
+    }
+}
