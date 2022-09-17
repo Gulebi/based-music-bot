@@ -1,7 +1,7 @@
 {
     "name": "bot",
     "version": "1.0.0",
-    "description": "the best music bot",
+    "description": "Based Music Bot",
     "main": "./src/index.js",
     "scripts": {
         "start": "node ./src/index.js",
