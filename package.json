@@ -1,6 +1,6 @@
 {
     "name": "bot",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "description": "the best music bot",
     "main": "./src/index.js",
     "scripts": {
@@ -11,6 +11,7 @@
     "author": "Gulebi",
     "license": "MIT",
     "dependencies": {
+        "@discord-player/extractor": "^3.0.2",
         "@discordjs/opus": "^0.8.0",
         "@sapphire/framework": "^3.1.1",
         "discord-player": "^5.3.1",
