@@ -22,7 +22,7 @@ module.exports.run = async (client, message, args, player) => {
     const embed = new EmbedBuilder()
         .setTitle("Выбери эффект")
         .setColor("#4188D2")
-        .setFooter({ text: "Based Music Bot", iconURL: "https://i.imgur.com/0PCQtit.png" });
+        .setFooter({ text: "Based Music Bot", iconURL: "https://imgur.com/Zd14R2K.png" });
 
     const selectMenu = new SelectMenuBuilder()
         .setCustomId("filter")

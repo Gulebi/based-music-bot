@@ -12,7 +12,7 @@ module.exports.run = async (client, interaction, player, customId) => {
     const embed = new EmbedBuilder()
         .setTitle(`Включаю предыдущий трек!`)
         .setColor("#4188D2")
-        .setFooter({ text: "Based Music Bot", iconURL: "https://i.imgur.com/0PCQtit.png" });
+        .setFooter({ text: "Based Music Bot", iconURL: "https://imgur.com/Zd14R2K.png" });
 
     return interaction.reply({ embeds: [embed] });
 };

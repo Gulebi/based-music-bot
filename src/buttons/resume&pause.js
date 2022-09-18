@@ -32,11 +32,11 @@ module.exports.run = async (client, interaction, player, customId) => {
             ? new EmbedBuilder()
                   .setTitle("Плеер возобновлен!")
                   .setColor("#4188D2")
-                  .setFooter({ text: "Based Music Bot", iconURL: "https://i.imgur.com/0PCQtit.png" })
+                  .setFooter({ text: "Based Music Bot", iconURL: "https://imgur.com/Zd14R2K.png" })
             : new EmbedBuilder()
                   .setTitle("Что-то пошло не так!")
                   .setColor("#ad0000")
-                  .setFooter({ text: "Based Music Bot", iconURL: "https://i.imgur.com/0PCQtit.png" });
+                  .setFooter({ text: "Based Music Bot", iconURL: "https://imgur.com/Zd14R2K.png" });
     } else {
         const paused = queue.setPaused(true);
 
@@ -62,11 +62,11 @@ module.exports.run = async (client, interaction, player, customId) => {
             ? new EmbedBuilder()
                   .setTitle("Плеер приостановлен!")
                   .setColor("#4188D2")
-                  .setFooter({ text: "Based Music Bot", iconURL: "https://i.imgur.com/0PCQtit.png" })
+                  .setFooter({ text: "Based Music Bot", iconURL: "https://imgur.com/Zd14R2K.png" })
             : new EmbedBuilder()
                   .setTitle("Что-то пошло не так!")
                   .setColor("#ad0000")
-                  .setFooter({ text: "Based Music Bot", iconURL: "https://i.imgur.com/0PCQtit.png" });
+                  .setFooter({ text: "Based Music Bot", iconURL: "https://imgur.com/Zd14R2K.png" });
     }
 
     // return interaction.message.reply({ embeds: [embed] });

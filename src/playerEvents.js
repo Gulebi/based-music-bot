@@ -26,7 +26,7 @@ module.exports.registerPlayerEvents = (player) => {
                           //   { name: "Длительность трека", value: `\`${queue.current.duration}\``, inline: true }
                       )
                       .setThumbnail(queue.current.thumbnail)
-                      .setFooter({ text: "Based Music Bot", iconURL: "https://i.imgur.com/0PCQtit.png" })
+                      .setFooter({ text: "Based Music Bot", iconURL: "https://imgur.com/Zd14R2K.png" })
                 : new EmbedBuilder()
                       .setTitle("Сейчас играет")
                       .setColor("#4188D2")
@@ -38,21 +38,26 @@ module.exports.registerPlayerEvents = (player) => {
                           { name: "Автор трека", value: `\`${queue.current.author}\``, inline: true },
                           { name: "Длительность трека", value: `\`${queue.current.duration}\``, inline: true }
                       )
-                      .setFooter({ text: "Based Music Bot", iconURL: "https://i.imgur.com/0PCQtit.png" });
+                      .setFooter({ text: "Based Music Bot", iconURL: "https://imgur.com/Zd14R2K.png" });
 
         const backBtn = new ButtonBuilder().setLabel("Back").setCustomId("back").setStyle("Secondary").setEmoji("⏪");
 
+        const methods = ["None", "Track", "Queue"];
+        const emojis = ["905067815780888666", "🔂", "🔁"];
+
+        const loopMode = queue.repeatMode;
+
         const loopBtn = new ButtonBuilder()
-            .setLabel("Off")
+            .setLabel(methods[loopMode])
             .setCustomId("loop")
             .setStyle("Secondary")
-            .setEmoji("905067815780888666");
+            .setEmoji(emojis[loopMode]);
 
         const resumePauseBtn = new ButtonBuilder()
-            .setLabel("Pause")
+            .setLabel(queue.connection.paused ? "Resume" : "Pause")
             .setCustomId("resume&pause")
             .setStyle("Secondary")
-            .setEmoji("⏸️");
+            .setEmoji(queue.connection.paused ? "▶️" : "⏸️");
 
         const stopBtn = new ButtonBuilder().setLabel("Stop").setCustomId("stop").setStyle("Secondary").setEmoji("⏹️");
 
@@ -70,7 +75,7 @@ module.exports.registerPlayerEvents = (player) => {
             .setDescription(`🎶 [\`${track.title}\`](${track.url})`)
             .addFields({ name: "Автор трека", value: `\`${track.author}\``, inline: true })
             .setThumbnail(track.thumbnail)
-            .setFooter({ text: "Based Music Bot", iconURL: "https://i.imgur.com/0PCQtit.png" });
+            .setFooter({ text: "Based Music Bot", iconURL: "https://imgur.com/Zd14R2K.png" });
 
         queue.metadata.send({ embeds: [embed] });
     });
@@ -88,7 +93,7 @@ module.exports.registerPlayerEvents = (player) => {
             .setTitle("Очередь закончена")
             .setColor("#4188D2")
             .setDescription("Добавьте в очередь дольше песен")
-            .setFooter({ text: "Based Music Bot", iconURL: "https://i.imgur.com/0PCQtit.png" });
+            .setFooter({ text: "Based Music Bot", iconURL: "https://imgur.com/Zd14R2K.png" });
 
         queue.metadata.send({ embeds: [embed] });
     });

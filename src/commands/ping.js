@@ -15,9 +15,10 @@ module.exports.run = (client, message, args, player) => {
                     : `UDP: \`${queue.connection.voiceConnection.ping.udp ?? "`N/A`"}\`ms\n
                     WebSocket: \`${queue.connection.voiceConnection.ping.ws ?? "`N/A`"}\`ms`,
             }
-        );
+        )
+        .setFooter({ text: "Based Music Bot", iconURL: "https://imgur.com/Zd14R2K.png" });
 
-    message.channel.send({ embeds: [embed] });
+    queue.metadata.send({ embeds: [embed] });
 };
 
 module.exports.data = {

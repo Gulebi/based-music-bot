@@ -1,7 +1,36 @@
 const { Collection } = require("discord.js");
 const fs = require("fs");
 const path = require("path");
-const { globalPrefix, guildPrefixes } = require("./prefixConfig.json");
+const mongo = require("./mongo");
+const mongoose = require("mongoose");
+const commandPrefixSchema = require("./schemas/setPrefixCmdSchema");
+
+const globalPrefix = "!";
+const guildPrefixes = {}; // { 'guildId' : 'prefix' }
+
+module.exports.updateCache = (guildId, newPrefix) => {
+    guildPrefixes[guildId] = newPrefix;
+};
+
+module.exports.loadPrefixes = async (client) => {
+    await mongo().then(async (mongoose) => {
+        try {
+            for (const guild of client.guilds.cache) {
+                const guildId = guild[1].id;
+
+                const result = await commandPrefixSchema.findOne({ _id: guildId });
+                // guildPrefixes[guildId] = result.prefix
+
+                if (result != null) {
+                    guildPrefixes[guildId] = await result.prefix;
+                }
+            }
+            console.log(guildPrefixes);
+        } finally {
+            mongoose.connection.close();
+        }
+    });
+};
 
 module.exports.cmdDetector = async (client) => {
     client.commands = new Collection();

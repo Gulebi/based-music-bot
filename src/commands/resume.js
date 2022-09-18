@@ -11,11 +11,11 @@ module.exports.run = (client, message, args, player) => {
         ? new EmbedBuilder()
               .setTitle("Плеер возобновлен!")
               .setColor("#4188D2")
-              .setFooter({ text: "Based Music Bot", iconURL: "https://i.imgur.com/0PCQtit.png" })
+              .setFooter({ text: "Based Music Bot", iconURL: "https://imgur.com/Zd14R2K.png" })
         : new EmbedBuilder()
               .setTitle("Что-то пошло не так!")
               .setColor("#ad0000")
-              .setFooter({ text: "Based Music Bot", iconURL: "https://i.imgur.com/0PCQtit.png" });
+              .setFooter({ text: "Based Music Bot", iconURL: "https://imgur.com/Zd14R2K.png" });
 
     queue.metadata.send({ embeds: [embed] });
 };

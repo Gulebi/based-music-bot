@@ -24,7 +24,7 @@ module.exports.run = (client, message, args, player) => {
                       //   { name: "Длительность трека", value: `\`${queue.current.duration}\``, inline: true }
                   )
                   .setThumbnail(queue.current.thumbnail)
-                  .setFooter({ text: "Based Music Bot", iconURL: "https://i.imgur.com/0PCQtit.png" })
+                  .setFooter({ text: "Based Music Bot", iconURL: "https://imgur.com/Zd14R2K.png" })
             : new EmbedBuilder()
                   .setTitle("Сейчас играет")
                   .setColor("#4188D2")
@@ -41,7 +41,7 @@ module.exports.run = (client, message, args, player) => {
                       { name: "\u200b", value: progress.replace(/ 0:00/g, " ◉ LIVE") }
                   )
                   .setThumbnail(queue.current.thumbnail)
-                  .setFooter({ text: "Based Music Bot", iconURL: "https://i.imgur.com/0PCQtit.png" });
+                  .setFooter({ text: "Based Music Bot", iconURL: "https://imgur.com/Zd14R2K.png" });
 
     queue.metadata.send({ embeds: [embed] });
 };

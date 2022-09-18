@@ -3,6 +3,9 @@
     "version": "1.0.0",
     "description": "Based Music Bot",
     "main": "./src/index.js",
+    "engines": {
+        "node": "16.x"
+    },
     "scripts": {
         "start": "node ./src/index.js",
         "dev": "nodemon ./src/index.js"
@@ -16,6 +19,7 @@
         "@sapphire/framework": "^3.1.1",
         "discord-player": "^5.3.1",
         "discord.js": "^14.3.0",
-        "dotenv": "^16.0.2"
+        "dotenv": "^16.0.2",
+        "mongoose": "^6.6.1"
     }
 }

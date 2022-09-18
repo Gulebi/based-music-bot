@@ -62,7 +62,7 @@ module.exports.run = async (client, interaction, player, customId) => {
                     newButton = ButtonBuilder.from(buttonComponent);
 
                     if (interaction.component.customId == buttonComponent.customId) {
-                        newButton.setEmoji("🔁").setLabel("None");
+                        newButton.setEmoji("905067815780888666").setLabel("None");
                     }
                     return newButton;
                 })
@@ -77,11 +77,11 @@ module.exports.run = async (client, interaction, player, customId) => {
         ? new EmbedBuilder()
               .setTitle(`Режим повтора изменён на | ${methods[queue.repeatMode]}`)
               .setColor("#4188D2")
-              .setFooter({ text: "Based Music Bot", iconURL: "https://i.imgur.com/0PCQtit.png" })
+              .setFooter({ text: "Based Music Bot", iconURL: "https://imgur.com/Zd14R2K.png" })
         : new EmbedBuilder()
               .setTitle("Что-то пошло не так!")
               .setColor("#ad0000")
-              .setFooter({ text: "Based Music Bot", iconURL: "https://i.imgur.com/0PCQtit.png" });
+              .setFooter({ text: "Based Music Bot", iconURL: "https://imgur.com/Zd14R2K.png" });
 
     // return interaction.message.reply({ embeds: [embed] });
 };

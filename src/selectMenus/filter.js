@@ -23,17 +23,17 @@ module.exports.run = async (client, interaction, player, customId) => {
         embed = new EmbedBuilder()
             .setTitle(`Эффект ${filterName} применён!`)
             .setColor("#4188D2")
-            .setFooter({ text: "Based Music Bot", iconURL: "https://i.imgur.com/0PCQtit.png" });
+            .setFooter({ text: "Based Music Bot", iconURL: "https://imgur.com/Zd14R2K.png" });
     } else if (queue.getFiltersEnabled()[0] == undefined) {
         embed = new EmbedBuilder()
             .setTitle(`Эффект ${filterName} отменён!`)
             .setColor("#4188D2")
-            .setFooter({ text: "Based Music Bot", iconURL: "https://i.imgur.com/0PCQtit.png" });
+            .setFooter({ text: "Based Music Bot", iconURL: "https://imgur.com/Zd14R2K.png" });
     } else {
         embed = new EmbedBuilder()
             .setTitle("Что-то пошло не так!")
             .setColor("#ad0000")
-            .setFooter({ text: "Based Music Bot", iconURL: "https://i.imgur.com/0PCQtit.png" });
+            .setFooter({ text: "Based Music Bot", iconURL: "https://imgur.com/Zd14R2K.png" });
     }
 
     return interaction.reply({ embeds: [embed] });
