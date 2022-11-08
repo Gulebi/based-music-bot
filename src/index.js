@@ -20,7 +20,15 @@ const client = new Client({
 
 const cookiesPath = path.join(__dirname, "..", "cookies.txt");
 
-const player = new Player(client);
+const player = new Player(client, {
+    ytdlOptions: {
+        requestOptions: {
+            headers: {
+                cookie: cookiesPath,
+            },
+        },
+    },
+});
 
 client.once("ready", async () => {
     registerPlayerEvents(player);

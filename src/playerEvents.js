@@ -10,35 +10,20 @@ module.exports.registerPlayerEvents = (player) => {
     });
 
     player.on("trackStart", (queue, track) => {
-        const source = queue.current.source;
+        // const source = queue.current.source;
 
-        const embed =
-            source == "spotify"
-                ? new EmbedBuilder()
-                      .setTitle("Сейчас играет")
-                      .setColor("#4188D2")
-                      .setDescription(`🎶 [\`${queue.current.title}\`](${queue.current.url})`)
-                      .addFields(
-                          { name: "Трек добавлен", value: `\`Someone\``, inline: true },
-                          // { name: "Трек добавлен", value: queue.current.requestedBy.username, inline: true },
-                          { name: "Автор трека", value: `\`${queue.current.author}\``, inline: true },
-                          { name: "Длительность трека", value: `\`Unknown\``, inline: true }
-                          //   { name: "Длительность трека", value: `\`${queue.current.duration}\``, inline: true }
-                      )
-                      .setThumbnail(queue.current.thumbnail)
-                      .setFooter({ text: "Based Music Bot", iconURL: "https://imgur.com/Zd14R2K.png" })
-                : new EmbedBuilder()
-                      .setTitle("Сейчас играет")
-                      .setColor("#4188D2")
-                      .setDescription(`🎶 [\`${queue.current.title}\`](${queue.current.url})`)
-                      .setThumbnail(queue.current.thumbnail)
-                      .addFields(
-                          { name: "Трек добавлен", value: `\`Someone\``, inline: true },
-                          // { name: "Трек добавлен", value: queue.current.requestedBy.username, inline: true },
-                          { name: "Автор трека", value: `\`${queue.current.author}\``, inline: true },
-                          { name: "Длительность трека", value: `\`${queue.current.duration}\``, inline: true }
-                      )
-                      .setFooter({ text: "Based Music Bot", iconURL: "https://imgur.com/Zd14R2K.png" });
+        const embed = new EmbedBuilder()
+            .setTitle("Сейчас играет")
+            .setColor("#4188D2")
+            .setDescription(`🎶 [\`${queue.current.title}\`](${queue.current.url})`)
+            .setThumbnail(queue.current.thumbnail)
+            .addFields(
+                { name: "Трек добавлен", value: `\`Someone\``, inline: true },
+                // { name: "Трек добавлен", value: queue.current.requestedBy.username, inline: true },
+                { name: "Автор трека", value: `\`${queue.current.author}\``, inline: true },
+                { name: "Длительность трека", value: `\`${queue.current.duration}\``, inline: true }
+            )
+            .setFooter({ text: "Based Music Bot", iconURL: "https://imgur.com/Zd14R2K.png" });
 
         const backBtn = new ButtonBuilder().setLabel("Back").setCustomId("back").setStyle("Secondary").setEmoji("⏪");
 
@@ -92,7 +77,7 @@ module.exports.registerPlayerEvents = (player) => {
         const embed = new EmbedBuilder()
             .setTitle("Очередь закончена")
             .setColor("#4188D2")
-            .setDescription("Добавьте в очередь дольше песен")
+            .setDescription("Добавьте в очередь больше треков")
             .setFooter({ text: "Based Music Bot", iconURL: "https://imgur.com/Zd14R2K.png" });
 
         queue.metadata.send({ embeds: [embed] });
